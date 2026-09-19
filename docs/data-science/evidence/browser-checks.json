@@ -1,0 +1,59 @@
+{
+  "origin": "http://127.0.0.1:5177",
+  "checks": [
+    {
+      "name": "raw files and model bypass denied",
+      "status": "PASS"
+    },
+    {
+      "name": "synthetic pipeline loads natively",
+      "status": "PASS"
+    },
+    {
+      "name": "five health states and native tables",
+      "status": "PASS"
+    },
+    {
+      "name": "workspace detail opens",
+      "status": "PASS"
+    },
+    {
+      "name": "Why Flagged exposes three detector scores",
+      "status": "PASS"
+    },
+    {
+      "name": "account filter and insufficient data",
+      "status": "PASS"
+    },
+    {
+      "name": "empty filter state",
+      "status": "PASS"
+    },
+    {
+      "name": "English model results",
+      "status": "PASS"
+    },
+    {
+      "name": "responsive 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "responsive 768",
+      "status": "PASS"
+    },
+    {
+      "name": "responsive 390",
+      "status": "PASS"
+    },
+    {
+      "name": "artist navigation and content denied",
+      "status": "PASS"
+    },
+    {
+      "name": "no browser exceptions or unexpected errors",
+      "status": "PASS"
+    }
+  ],
+  "exceptions": [],
+  "expectedBridgeUnavailable": 2
+}

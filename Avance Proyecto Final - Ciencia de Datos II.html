@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avance Proyecto Final — Ciencia de Datos II</title>
+  <style>
+    @page { size: Letter; margin: 1.65cm 1.5cm 1.55cm; }
+    :root { --ink:#14213d; --muted:#536273; --accent:#087e8b; --accent-soft:#eaf7f8; --line:#d6dde5; --warn:#fff6df; }
+    * { box-sizing:border-box; }
+    body { color:#18212b; font:10.4pt/1.47 Arial,Helvetica,sans-serif; margin:0; }
+    h1,h2,h3 { color:var(--ink); line-height:1.18; margin:0 0 .45rem; }
+    h1 { font-size:26pt; letter-spacing:-.55px; }
+    h2 { font-size:16pt; border-bottom:2px solid var(--accent); padding-bottom:.22rem; margin-top:1.45rem; }
+    h3 { font-size:12pt; margin-top:1rem; }
+    p { margin:.45rem 0; } ul,ol { margin:.4rem 0 .7rem; padding-left:1.35rem; } li { margin:.19rem 0; }
+    code { font:9pt Consolas,monospace; color:#244; }
+    .cover { min-height:23.5cm; display:flex; flex-direction:column; justify-content:center; text-align:center; padding:1cm .8cm; }
+    .eyebrow { color:var(--accent); font-size:11pt; font-weight:700; letter-spacing:1.25px; text-transform:uppercase; }
+    .rule { width:98px; height:5px; margin:1.1rem auto; background:var(--accent); border-radius:4px; }
+    .subtitle { color:var(--muted); font-size:15pt; margin:0 auto 2rem; max-width:580px; }
+    .cover-table { border-collapse:collapse; margin:1.5rem auto 0; text-align:left; width:min(490px,100%); }
+    .cover-table th,.cover-table td { border-bottom:1px solid var(--line); padding:.47rem .35rem; }
+    .cover-table th { color:var(--muted); font-weight:700; width:43%; }
+    .statement { background:var(--accent-soft); border-left:5px solid var(--accent); padding:.76rem .95rem; margin:.85rem 0; }
+    .note { background:var(--warn); border-left:4px solid #d59614; padding:.65rem .8rem; margin:.8rem 0; font-size:9.6pt; }
+    table { width:100%; border-collapse:collapse; margin:.55rem 0 1rem; font-size:9pt; page-break-inside:avoid; }
+    th { background:var(--ink); color:#fff; font-weight:700; text-align:left; }
+    th,td { border:1px solid var(--line); padding:.38rem .42rem; vertical-align:top; }
+    tbody tr:nth-child(even) { background:#f7f9fb; }
+    .compact { font-size:8.15pt; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:.65rem; margin:.65rem 0; }
+    .card { border:1px solid var(--line); border-top:4px solid var(--accent); padding:.68rem .75rem; page-break-inside:avoid; }
+    .metric { color:var(--accent); font-size:17pt; font-weight:700; display:block; }
+    .chart { border:1px solid var(--line); padding:.55rem .6rem .25rem; margin:.65rem 0; page-break-inside:avoid; }
+    .chart-title { color:var(--ink); font-weight:700; font-size:9.8pt; }
+    .caption { color:var(--muted); font-size:8.5pt; margin:.22rem 0; }
+    .page-break { break-before:page; page-break-before:always; }
+    .footer { color:var(--muted); font-size:8pt; margin-top:1.2rem; border-top:1px solid var(--line); padding-top:.35rem; }
+    @media print { .cover { min-height:22.8cm; } h2 { break-after:avoid; } }
+  </style>
+</head>
+<body>
+  <section class="cover">
+    <p class="eyebrow">Avance del Proyecto Final</p>
+    <div class="rule"></div>
+    <h1>Operation Suite Intelligence</h1>
+    <p class="subtitle">Sistema Inteligente de Salud, Detección de Anomalías y Priorización Operativa</p>
+    <table class="cover-table" aria-label="Información académica">
+      <tr><th>Curso</th><td>Ciencia de Datos II</td></tr>
+      <tr><th>Docente</th><td>Ing. Naomy Ríos</td></tr>
+      <tr><th>Estudiante / equipo</th><td>Miguel Ángel Carranza Avilez — trabajo individual</td></tr>
+      <tr><th>Proyecto base</th><td>Operation Suite</td></tr>
+      <tr><th>Fecha de entrega</th><td>4 de septiembre de 2026</td></tr>
+    </table>
+  </section>
+
+  <section class="page-break">
+    <h2>1. Descripción del proyecto original</h2>
+    <p><strong>Operation Suite</strong> es una plataforma web para centralizar la administración y supervisión de herramientas de producción gráfica que se ejecutan localmente en Adobe Illustrator. Su finalidad no es procesar arte en la nube: controla de forma segura quién puede utilizar cada herramienta, desde qué estación autorizada y dentro de qué cuenta o workspace.</p>
+    <p>La solución integra una aplicación web, Firebase Authentication, Cloud Firestore, Cloud Functions, un Local Bridge de alcance local y un panel CEP para Adobe Illustrator. Los motores de <strong>Clean Vector PRO</strong> y <strong>Sep Maker PRO</strong> permanecen ejecutándose en la computadora del artista. Operation Suite administra cuentas, usuarios, membresías, roles, equipos, workspaces, herramientas, licencias, asignaciones y estaciones de trabajo.</p>
+    <div class="statement"><strong>Problema original que resuelve.</strong> En un entorno de producción gráfica, las herramientas, automatizaciones, configuraciones por cliente y accesos pueden estar fragmentados entre estaciones y usuarios. Operation Suite aporta autorización centralizada, aislamiento por workspace, estandarización, trazabilidad y telemetría operacional segura.</div>
+    <h3>Arquitectura operacional</h3>
+    <p style="font:9pt Consolas,monospace; background:#f4f7f9; padding:.8rem; border:1px solid var(--line);">Super Administrator → Web App / consola administrativa → Cloud Functions auditadas → Firestore con acceso default-deny → catálogo autorizado de la estación → Local Bridge local → panel CEP → Clean Vector PRO o Sep Maker PRO → resultado sanitizado → ExecutionEvent V1 y agregados diarios → tableros según rol</p>
+    <p>Por privacidad, Operation Suite no registra ni analizará nombre, ruta o contenido de archivos, arte, configuraciones técnicas de clientes, direcciones MAC, correos personales, credenciales ni secretos. La telemetría conserva únicamente datos operacionales mínimos y autorizados.</p>
+
+    <h2>2. Problema seleccionado</h2>
+    <p>Operation Suite registra ejecuciones de herramientas con duración, resultado, timestamps, versión, workspace y estación autorizada. Estos datos informan <em>qué ocurrió</em>, pero no identifican automáticamente si una ejecución fue inusual ni cuál entidad debe revisarse primero.</p>
+    <p>Una ejecución puede terminar con <code>success</code> y, aun así, tardar mucho más que su comportamiento normal. Por ejemplo, una acción de Sep Maker PRO que normalmente toma entre 8 y 15 segundos podría tardar 47 segundos; el estado de éxito no revela esa posible degradación.</p>
+    <div class="statement"><strong>Pregunta central:</strong> ¿Cómo puede el análisis de telemetría operacional permitir la identificación temprana de comportamientos anómalos y la priorización de workspaces, dispositivos o herramientas que requieren intervención dentro de Operation Suite?</div>
+  </section>
+
+  <section>
+    <h2>3. Objetivos</h2>
+    <h3>Objetivo general</h3>
+    <p>Construir <strong>Operation Suite Intelligence</strong>, un componente de Ciencia de Datos que analice telemetría operacional segura para detectar anomalías, calcular salud operativa y priorizar workspaces, dispositivos y herramientas que requieren atención dentro de Operation Suite.</p>
+    <h3>Objetivos específicos</h3>
+    <ol>
+      <li>Diseñar un dataset híbrido, trazable y privado a partir de telemetría operacional y datos sintéticos reproducibles.</li>
+      <li>Implementar un proceso ETL que extraiga, normalice, limpie y prepare los datos para análisis, entrenamiento, evaluación y visualización.</li>
+      <li>Realizar análisis exploratorio de ejecuciones, duración, resultado, herramientas, workspaces, plataforma y tendencias temporales.</li>
+      <li>Identificar y evaluar una técnica de detección de anomalías basada en Isolation Forest frente a una línea base estadística robusta.</li>
+      <li>Diseñar un Operational Health Score y un Priority Engine explicables que apoyen decisiones administrativas sin evaluar el desempeño individual de empleados.</li>
+    </ol>
+
+    <h2>4. Dataset</h2>
+    <h3>Fuente y tipo</h3>
+    <p>La fuente operacional es el contrato implementado <code>ExecutionEvent V1</code>. Para el avance se generó un dataset reproducible de <strong>1,440 ejecuciones sintéticas</strong>, distribuidas en 90 días y dos grupos homogéneos: Clean Vector PRO / <code>CLEAN ART</code> y Sep Maker PRO / <code>Apply</code>. La estructura también admite ejecuciones reales controladas cuando sean autorizadas.</p>
+    <table>
+      <thead><tr><th>Origen</th><th>Descripción</th><th>Uso</th></tr></thead>
+      <tbody>
+        <tr><td><code>SYNTHETIC</code></td><td>Registros reproducibles, con patrones normales y anomalías documentadas.</td><td>Volumen, EDA y evaluación académica controlada.</td></tr>
+        <tr><td><code>REAL_CONTROLLED</code></td><td>Ejecuciones sanitizadas y autorizadas realizadas para la validación académica.</td><td>Contrastar la representación con telemetría real, sin datos productivos sensibles.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>Transparencia:</strong> el avance usa únicamente registros <code>SYNTHETIC</code>. No se presentan como telemetría productiva real ni se usaron datos empresariales, archivos de Illustrator o información personal.</div>
+
+    <h3>Estructura y diccionario de datos</h3>
+    <table class="compact">
+      <thead><tr><th>Campo</th><th>Tipo</th><th>Descripción y uso</th></tr></thead>
+      <tbody>
+        <tr><td><code>execution_id</code></td><td>Texto</td><td>Identificador único; deduplicación y trazabilidad.</td></tr>
+        <tr><td><code>account_id</code>, <code>workspace_id</code>, <code>device_id</code>, <code>actor_uid</code></td><td>Texto opaco</td><td>Contexto, filtros y agrupación; no son features iniciales del modelo.</td></tr>
+        <tr><td><code>tool_id</code>, <code>tool_version</code>, <code>action</code></td><td>Categórico</td><td>Herramienta, versión y acción; permiten segmentar grupos comparables.</td></tr>
+        <tr><td><code>status</code></td><td>Categórico</td><td><code>success</code>, <code>failure</code> o <code>cancelled</code>; EDA y Health Score, no feature inicial.</td></tr>
+        <tr><td><code>error_code</code></td><td>Categórico / nulo</td><td>Código seguro y cerrado de error; explicación y EDA, nunca mensajes libres.</td></tr>
+        <tr><td><code>duration_ms</code></td><td>Entero</td><td>Duración en milisegundos; señal principal de anomalía.</td></tr>
+        <tr><td><code>started_at</code>, <code>completed_at</code>, <code>received_at</code></td><td>Timestamp UTC</td><td>Validación temporal, tendencias y variables derivadas.</td></tr>
+        <tr><td><code>source</code>, <code>host_version</code>, <code>suite_version</code>, <code>device_platform</code></td><td>Categórico</td><td>Trazabilidad, análisis por plataforma y posibles variables candidatas.</td></tr>
+        <tr><td><code>data_origin</code></td><td>Categórico</td><td>Separa estrictamente <code>SYNTHETIC</code> de <code>REAL_CONTROLLED</code>.</td></tr>
+        <tr><td><code>duration_seconds</code>, <code>log_duration</code>, <code>hour_of_day</code>, <code>day_of_week</code></td><td>Derivado</td><td>Variables creadas por el ETL para EDA y modelado.</td></tr>
+        <tr><td><code>expected_anomaly</code></td><td>Booleano académico</td><td>Etiqueta sintética conocida, utilizada solo después del scoring para evaluación; nunca como feature.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page-break">
+    <h2>5. Proceso de Ciencia de Datos</h2>
+    <h3>5.1 Obtención</h3>
+    <p>La obtención se diseñó para partir de eventos de telemetría autorizados y de las colecciones mínimas necesarias para contextualizarlos: ejecuciones, agregados diarios, estaciones, workspaces y catálogo de herramientas. En esta entrega se utiliza un generador determinístico con IDs opacos, semilla documentada, patrones por herramienta y anomalías conocidas. No se conectó a Firebase productivo ni se leyó contenido de Illustrator.</p>
+
+    <h3>5.2 ETL</h3>
+    <table>
+      <thead><tr><th>Fase</th><th>Actividad aplicada</th><th>Resultado</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Extract</strong></td><td>Lectura del CSV sintético generado; el diseño admite posteriormente exportaciones sanitizadas autorizadas.</td><td>1,440 eventos fuente.</td></tr>
+        <tr><td><strong>Transform</strong></td><td>Validación de esquema, deduplicación por <code>execution_id</code>, normalización de categorías, conversión de duración, validación de timestamps y creación de variables temporales y <code>log_duration</code>.</td><td>Dataset limpio y analítico.</td></tr>
+        <tr><td><strong>Load</strong></td><td>Persistencia local de dataset procesado, reporte de calidad, resumen EDA, scoring y resultados derivados.</td><td>Artefactos reproducibles, sin servicios externos.</td></tr>
+      </tbody>
+    </table>
+    <div class="grid">
+      <div class="card"><span class="metric">1,440</span>registros generados</div>
+      <div class="card"><span class="metric">1,440</span>registros aceptados por ETL</div>
+      <div class="card"><span class="metric">0</span>registros rechazados</div>
+      <div class="card"><span class="metric">90 días</span>cobertura temporal sintética</div>
+    </div>
+
+    <h3>5.3 Limpieza</h3>
+    <p>La limpieza diferencia un dato inválido de una anomalía válida. Se rechazan registros con identificadores o categorías fuera de la allow-list, duplicados conflictivos, campos obligatorios ausentes, timestamps no interpretables, finalización anterior al inicio, duración negativa o duración mayor al máximo contractual de doce horas.</p>
+    <p>Una ejecución lenta, fallida o cancelada que cumple el contrato <strong>no se elimina</strong>; podría contener precisamente la señal operacional que se desea detectar. Los nulos opcionales se conservan como ausencia explícita y los IDs opacos se excluyen de las features directas para evitar sesgo por alta cardinalidad.</p>
+
+    <h3>5.4 EDA — análisis exploratorio inicial</h3>
+    <p>Se exploraron volúmenes, estados, plataformas, duración por herramienta, percentiles, anomalías sintéticas conocidas y comportamiento temporal. Los resultados siguientes son evidencia inicial sobre el dataset sintético y no una afirmación sobre uso productivo.</p>
+    <table>
+      <thead><tr><th>Indicador</th><th>Resultado inicial</th></tr></thead>
+      <tbody>
+        <tr><td>Ejecuciones por estado</td><td>1,325 <code>success</code> (92.0%), 75 <code>failure</code> y 40 <code>cancelled</code>.</td></tr>
+        <tr><td>Distribución por herramienta</td><td>667 ejecuciones de Clean Vector PRO y 773 de Sep Maker PRO.</td></tr>
+        <tr><td>Anomalías sintéticas documentadas</td><td>111; la mayoría mantiene <code>success</code> para validar que “éxito” no equivale siempre a “comportamiento normal”.</td></tr>
+        <tr><td>Duración — Clean Vector PRO</td><td>Mediana 4.428 s; percentil 95: 13.362 s.</td></tr>
+        <tr><td>Duración — Sep Maker PRO</td><td>Mediana 11.881 s; percentil 95: 38.850 s.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <div class="chart">
+      <p class="chart-title">Figura 1. Distribución de ejecuciones por estado</p>
+      <svg viewBox="0 0 700 220" width="100%" role="img" aria-label="Gráfico de barras: 1325 éxitos, 75 fallos y 40 cancelaciones">
+        <line x1="80" y1="175" x2="675" y2="175" stroke="#90a0ae" stroke-width="1"/>
+        <line x1="80" y1="20" x2="80" y2="175" stroke="#90a0ae" stroke-width="1"/>
+        <rect x="145" y="22" width="115" height="153" fill="#087e8b"/><text x="202" y="14" text-anchor="middle" font-size="13" fill="#14213d" font-weight="bold">1325</text><text x="202" y="198" text-anchor="middle" font-size="13">Success</text>
+        <rect x="345" y="166" width="115" height="9" fill="#d66d5b"/><text x="402" y="156" text-anchor="middle" font-size="13" fill="#14213d" font-weight="bold">75</text><text x="402" y="198" text-anchor="middle" font-size="13">Failure</text>
+        <rect x="545" y="170" width="115" height="5" fill="#d9a441"/><text x="602" y="160" text-anchor="middle" font-size="13" fill="#14213d" font-weight="bold">40</text><text x="602" y="198" text-anchor="middle" font-size="13">Cancelled</text>
+      </svg>
+      <p class="caption">Fuente: dataset sintético reproducible v0.1 (n = 1,440).</p>
+    </div>
+    <div class="chart">
+      <p class="chart-title">Figura 2. Duración por herramienta: mediana y percentil 95</p>
+      <svg viewBox="0 0 700 235" width="100%" role="img" aria-label="Comparación de duración mediana y percentil 95 por herramienta">
+        <line x1="165" y1="195" x2="665" y2="195" stroke="#90a0ae"/><text x="6" y="75" font-size="13">Clean Vector PRO</text><text x="6" y="150" font-size="13">Sep Maker PRO</text>
+        <rect x="165" y="45" width="57" height="20" fill="#087e8b"/><text x="228" y="60" font-size="12">Mediana 4.428 s</text><rect x="165" y="72" width="172" height="20" fill="#89c9cf"/><text x="344" y="87" font-size="12">P95 13.362 s</text>
+        <rect x="165" y="120" width="153" height="20" fill="#087e8b"/><text x="324" y="135" font-size="12">Mediana 11.881 s</text><rect x="165" y="147" width="500" height="20" fill="#89c9cf"/><text x="506" y="162" text-anchor="middle" font-size="12">P95 38.850 s</text>
+        <text x="165" y="215" font-size="11" fill="#536273">0 s</text><text x="650" y="215" font-size="11" fill="#536273">40 s</text>
+      </svg>
+      <p class="caption">La diferencia de escalas justifica segmentar el análisis por herramienta y acción.</p>
+    </div>
+
+    <h2>6. Modelos utilizados — algoritmo identificado</h2>
+    <table>
+      <tbody>
+        <tr><th style="width:33%">Tipo de problema</th><td>Aprendizaje no supervisado para detección de anomalías operacionales.</td></tr>
+        <tr><th>Algoritmo identificado</th><td><strong>Isolation Forest</strong>, entrenado inicialmente por grupos homogéneos de herramienta y acción.</td></tr>
+        <tr><th>Variable objetivo</th><td>No aplica como objetivo operacional tradicional. La etiqueta <code>expected_anomaly</code> existe solo para evaluar el dataset sintético después del scoring.</td></tr>
+        <tr><th>Feature inicial</th><td><code>log_duration</code>, derivada de <code>duration_ms</code>. Las variables temporales, plataforma y versión serán candidatas únicamente si una ablación temporal demuestra mejora.</td></tr>
+        <tr><th>Features excluidas</th><td><code>status</code>, <code>error_code</code>, <code>workspace_id</code>, <code>device_id</code>, <code>account_id</code> y <code>actor_uid</code>; se usan para EDA, explicación o agrupación, no para que el modelo aprenda identidades o “fallo = anomalía”.</td></tr>
+        <tr><th>Evaluación</th><td>Separación cronológica 70/30, Precision, Recall y F1; comparación obligatoria con baseline robusto MAD/IQR.</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>Resultado preliminar y criterio de rigor:</strong> en el dataset sintético univariado, MAD/IQR superó a Isolation Forest. Por ello, ambos se conservarán como comparación y ninguna alerta automatizará decisiones. Isolation Forest sigue siendo el algoritmo seleccionado para la clase por su capacidad de identificar patrones inusuales sin requerir un historial real ampliamente etiquetado.</div>
+
+    <h2>Conclusión del avance</h2>
+    <p>El avance cumple con la definición del problema, objetivos, dataset, diccionario de datos, ETL, limpieza, EDA y la identificación del algoritmo solicitado. El valor agregado de Operation Suite Intelligence consiste en transformar telemetría segura en señales explicables: qué ejecución se comportó de forma inusual, qué workspace, dispositivo o herramienta requiere atención y por qué.</p>
+    <p>La siguiente etapa será validar con datos <code>REAL_CONTROLLED</code>, ampliar las visualizaciones académicas y, únicamente tras aprobación técnica separada, evaluar la integración de resultados derivados al dashboard exclusivo del Super Administrator.</p>
+    <p class="footer">Operation Suite Intelligence · Avance Proyecto Final · Ciencia de Datos II · Datos sintéticos reproducibles, sin información sensible ni telemetría productiva real.</p>
+  </section>
+</body>
+</html>

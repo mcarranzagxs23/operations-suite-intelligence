@@ -1,0 +1,487 @@
+{
+  "purpose": "Same layout measurements on the pre-fix commit and on the current tree, in headless Chrome. Identifier lines are counted from text-node line boxes.",
+  "before": {
+    "commit": "9c41b0e",
+    "origin": "http://127.0.0.1:5179",
+    "label": "before (9c41b0e)",
+    "measuredAt": "2026-09-18T13:41:16.627Z",
+    "viewports": [
+      {
+        "viewport": "1366x768",
+        "sidebar": {
+          "position": "fixed",
+          "height": "768px",
+          "overflowY": "visible",
+          "scrollable": true,
+          "hiddenItems": [
+            "Soporte",
+            "Documentación"
+          ]
+        },
+        "pageHorizontalOverflow": false,
+        "identifiers": {
+          "cells": 113,
+          "maxTextLines": 4,
+          "wrappedCells": 25
+        },
+        "tables": [
+          {
+            "columns": 12,
+            "maxRow": 107,
+            "minColWidth": 66,
+            "tableWidth": 1293,
+            "frame": 929,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 16,
+            "maxRow": 509,
+            "minColWidth": 66,
+            "tableWidth": 1772,
+            "frame": 929,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 15,
+            "maxRow": 91,
+            "minColWidth": 66,
+            "tableWidth": 1542,
+            "frame": 929,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 15,
+            "maxRow": 91,
+            "minColWidth": 72,
+            "tableWidth": 1576,
+            "frame": 929,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 10,
+            "maxRow": 621,
+            "minColWidth": 66,
+            "tableWidth": 989,
+            "frame": 929,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 11,
+            "maxRow": 57,
+            "minColWidth": 51,
+            "tableWidth": 1236,
+            "frame": 929,
+            "overflowX": "auto"
+          }
+        ]
+      },
+      {
+        "viewport": "1280x720",
+        "sidebar": {
+          "position": "fixed",
+          "height": "720px",
+          "overflowY": "visible",
+          "scrollable": true,
+          "hiddenItems": [
+            "Soporte",
+            "Documentación"
+          ]
+        },
+        "pageHorizontalOverflow": false,
+        "identifiers": {
+          "cells": 113,
+          "maxTextLines": 4,
+          "wrappedCells": 25
+        },
+        "tables": [
+          {
+            "columns": 12,
+            "maxRow": 107,
+            "minColWidth": 66,
+            "tableWidth": 1293,
+            "frame": 850,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 16,
+            "maxRow": 509,
+            "minColWidth": 66,
+            "tableWidth": 1772,
+            "frame": 850,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 15,
+            "maxRow": 91,
+            "minColWidth": 66,
+            "tableWidth": 1542,
+            "frame": 850,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 15,
+            "maxRow": 91,
+            "minColWidth": 72,
+            "tableWidth": 1576,
+            "frame": 850,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 10,
+            "maxRow": 621,
+            "minColWidth": 66,
+            "tableWidth": 989,
+            "frame": 850,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 11,
+            "maxRow": 57,
+            "minColWidth": 51,
+            "tableWidth": 1236,
+            "frame": 850,
+            "overflowX": "auto"
+          }
+        ]
+      },
+      {
+        "viewport": "1024x768",
+        "sidebar": {
+          "position": "fixed",
+          "height": "768px",
+          "overflowY": "visible",
+          "scrollable": true,
+          "hiddenItems": [
+            "Soporte",
+            "Documentación"
+          ]
+        },
+        "pageHorizontalOverflow": false,
+        "identifiers": {
+          "cells": 113,
+          "maxTextLines": 4,
+          "wrappedCells": 25
+        },
+        "tables": [
+          {
+            "columns": 12,
+            "maxRow": 107,
+            "minColWidth": 66,
+            "tableWidth": 1293,
+            "frame": 666,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 16,
+            "maxRow": 509,
+            "minColWidth": 66,
+            "tableWidth": 1772,
+            "frame": 666,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 15,
+            "maxRow": 91,
+            "minColWidth": 66,
+            "tableWidth": 1542,
+            "frame": 666,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 15,
+            "maxRow": 91,
+            "minColWidth": 72,
+            "tableWidth": 1576,
+            "frame": 666,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 10,
+            "maxRow": 621,
+            "minColWidth": 66,
+            "tableWidth": 989,
+            "frame": 666,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 11,
+            "maxRow": 57,
+            "minColWidth": 51,
+            "tableWidth": 1236,
+            "frame": 666,
+            "overflowX": "auto"
+          }
+        ]
+      }
+    ]
+  },
+  "after": {
+    "commit": "5b331e1 + working tree",
+    "origin": "http://127.0.0.1:5178",
+    "label": "after (working tree)",
+    "measuredAt": "2026-09-18T13:41:22.170Z",
+    "viewports": [
+      {
+        "viewport": "1366x768",
+        "sidebar": {
+          "position": "fixed",
+          "height": "768px",
+          "overflowY": "auto",
+          "scrollable": false,
+          "hiddenItems": []
+        },
+        "pageHorizontalOverflow": false,
+        "identifiers": {
+          "cells": 116,
+          "maxTextLines": 1,
+          "wrappedCells": 0
+        },
+        "tables": [
+          {
+            "columns": 11,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1127,
+            "frame": 929,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 12,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1254,
+            "frame": 929,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 16,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1955,
+            "frame": 929,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 15,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1477,
+            "frame": 929,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 12,
+            "maxRow": 43,
+            "minColWidth": 69,
+            "tableWidth": 1301,
+            "frame": 919,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 10,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 986,
+            "frame": 919,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 5,
+            "maxRow": 32,
+            "minColWidth": 60,
+            "tableWidth": 929,
+            "frame": 929,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 11,
+            "maxRow": 35,
+            "minColWidth": 46,
+            "tableWidth": 1141,
+            "frame": 929,
+            "overflowX": "auto"
+          }
+        ]
+      },
+      {
+        "viewport": "1280x720",
+        "sidebar": {
+          "position": "fixed",
+          "height": "720px",
+          "overflowY": "auto",
+          "scrollable": false,
+          "hiddenItems": []
+        },
+        "pageHorizontalOverflow": false,
+        "identifiers": {
+          "cells": 116,
+          "maxTextLines": 1,
+          "wrappedCells": 0
+        },
+        "tables": [
+          {
+            "columns": 11,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1127,
+            "frame": 850,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 12,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1254,
+            "frame": 850,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 16,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1955,
+            "frame": 850,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 15,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1477,
+            "frame": 850,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 12,
+            "maxRow": 43,
+            "minColWidth": 69,
+            "tableWidth": 1301,
+            "frame": 840,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 10,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 986,
+            "frame": 840,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 5,
+            "maxRow": 32,
+            "minColWidth": 55,
+            "tableWidth": 850,
+            "frame": 850,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 11,
+            "maxRow": 35,
+            "minColWidth": 46,
+            "tableWidth": 1141,
+            "frame": 850,
+            "overflowX": "auto"
+          }
+        ]
+      },
+      {
+        "viewport": "1024x768",
+        "sidebar": {
+          "position": "fixed",
+          "height": "768px",
+          "overflowY": "auto",
+          "scrollable": false,
+          "hiddenItems": []
+        },
+        "pageHorizontalOverflow": false,
+        "identifiers": {
+          "cells": 116,
+          "maxTextLines": 1,
+          "wrappedCells": 0
+        },
+        "tables": [
+          {
+            "columns": 11,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1127,
+            "frame": 666,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 12,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1254,
+            "frame": 666,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 16,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1955,
+            "frame": 666,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 15,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 1477,
+            "frame": 666,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 12,
+            "maxRow": 43,
+            "minColWidth": 69,
+            "tableWidth": 1301,
+            "frame": 656,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 10,
+            "maxRow": 45,
+            "minColWidth": 54,
+            "tableWidth": 986,
+            "frame": 656,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 5,
+            "maxRow": 32,
+            "minColWidth": 43,
+            "tableWidth": 666,
+            "frame": 666,
+            "overflowX": "auto"
+          },
+          {
+            "columns": 11,
+            "maxRow": 35,
+            "minColWidth": 46,
+            "tableWidth": 1141,
+            "frame": 666,
+            "overflowX": "auto"
+          }
+        ]
+      }
+    ]
+  },
+  "screenshots": [
+    "00a-before-sidebar-1366x633.png",
+    "00b-before-device-rows-1366x633.png",
+    "00c-before-priority-rows-1366x633.png",
+    "before-anomalies-1024x768.png",
+    "before-anomalies-1280x720.png",
+    "before-anomalies-1366x768.png",
+    "before-devices-1366x768.png",
+    "before-priority-1024x768.png",
+    "before-priority-1280x720.png",
+    "before-priority-1366x768.png",
+    "before-sidebar-1024x768.png",
+    "before-sidebar-1280x720.png",
+    "before-sidebar-1366x768.png"
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "dataset": "operation-suite-intelligence-v0.1-clean.csv",
+  "evaluationProtocol": "chronological 70/30 split by tool/action",
+  "featureColumns": [
+    "log_duration"
+  ],
+  "candidateContextFeatures": [
+    "hour_sin",
+    "hour_cos",
+    "day_sin",
+    "day_cos",
+    "device_platform",
+    "tool_version"
+  ],
+  "excludedFeatures": [
+    "status",
+    "error_code",
+    "account_id",
+    "workspace_id",
+    "device_id",
+    "actor_uid"
+  ],
+  "models": [
+    {
+      "modelId": "clean-vector-pro__CLEAN ART",
+      "featureColumns": [
+        "log_duration"
+      ],
+      "trainRows": 466,
+      "evaluationRows": 201,
+      "threshold": 0.5889392812196484,
+      "metrics": {
+        "truePositive": 4,
+        "falsePositive": 4,
+        "falseNegative": 2,
+        "trueNegative": 191,
+        "precision": 0.5,
+        "recall": 0.6666666666666666,
+        "f1": 0.5714285714285715
+      },
+      "madBaseline": {
+        "medianLogDuration": 8.408159,
+        "mad": 0.16214999999999957,
+        "iqr": 0.3491402500000014,
+        "method": "mad",
+        "metrics": {
+          "truePositive": 5,
+          "falsePositive": 0,
+          "falseNegative": 1,
+          "trueNegative": 195,
+          "precision": 1,
+          "recall": 0.8333333333333334,
+          "f1": 0.9090909090909091
+        }
+      }
+    },
+    {
+      "modelId": "sepmaker-pro__Apply",
+      "featureColumns": [
+        "log_duration"
+      ],
+      "trainRows": 541,
+      "evaluationRows": 232,
+      "threshold": 0.6039872182037584,
+      "metrics": {
+        "truePositive": 20,
+        "falsePositive": 4,
+        "falseNegative": 1,
+        "trueNegative": 207,
+        "precision": 0.8333333333333334,
+        "recall": 0.9523809523809523,
+        "f1": 0.888888888888889
+      },
+      "madBaseline": {
+        "medianLogDuration": 9.382022,
+        "mad": 0.15551299999999912,
+        "iqr": 0.3104010000000006,
+        "method": "mad",
+        "metrics": {
+          "truePositive": 21,
+          "falsePositive": 0,
+          "falseNegative": 0,
+          "trueNegative": 211,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        }
+      }
+    }
+  ]
+}

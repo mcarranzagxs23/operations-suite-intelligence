@@ -1,0 +1,937 @@
+{
+  "origin": "http://127.0.0.1:5177",
+  "expected": {
+    "spotlight": "exec_v02_0005709",
+    "priorityWorkspace": "account_demo_b / workspace_incident",
+    "decisionDetector": "MAD",
+    "globalHealth": 65.73,
+    "thirtyDays": {
+      "executions": 961,
+      "anomalies": 274,
+      "health": 64.75
+    }
+  },
+  "checks": [
+    {
+      "name": "1920x1080: no page-level horizontal scroll",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080: sidebar reachable (every item visible or rail scrolls)",
+      "status": "PASS",
+      "detail": {
+        "scrollable": false,
+        "overflowY": "auto",
+        "hidden": 0,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1920x1080: Intelligence visible in the rail without scrolling",
+      "status": "PASS",
+      "detail": {
+        "scrollable": false,
+        "overflowY": "auto",
+        "hidden": 0,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1920x1080: rows stay compact (<= 64px)",
+      "status": "PASS",
+      "detail": [
+        "int-accounts:45",
+        "int-workspaces:45",
+        "int-devices:45",
+        "int-tools:45",
+        "int-anomalies:43",
+        "int-priority:45"
+      ]
+    },
+    {
+      "name": "1920x1080: identifiers on one line",
+      "status": "PASS",
+      "detail": 1.1111111111111112
+    },
+    {
+      "name": "1920x1080: wide tables scroll inside their frame",
+      "status": "PASS"
+    },
+    {
+      "name": "1920x1080: header not squashed, text not microscopic",
+      "status": "PASS",
+      "detail": {
+        "topbar": 76,
+        "kpi": 28,
+        "table": 12
+      }
+    },
+    {
+      "name": "1920x1080: dialog inside the viewport, close button visible after scrolling",
+      "status": "PASS",
+      "detail": {
+        "inside": true,
+        "closeVisible": true
+      }
+    },
+    {
+      "name": "1600x900: no page-level horizontal scroll",
+      "status": "PASS"
+    },
+    {
+      "name": "1600x900: sidebar reachable (every item visible or rail scrolls)",
+      "status": "PASS",
+      "detail": {
+        "scrollable": false,
+        "overflowY": "auto",
+        "hidden": 0,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1600x900: Intelligence visible in the rail without scrolling",
+      "status": "PASS",
+      "detail": {
+        "scrollable": false,
+        "overflowY": "auto",
+        "hidden": 0,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1600x900: rows stay compact (<= 64px)",
+      "status": "PASS",
+      "detail": [
+        "int-accounts:45",
+        "int-workspaces:45",
+        "int-devices:45",
+        "int-tools:45",
+        "int-anomalies:43",
+        "int-priority:45"
+      ]
+    },
+    {
+      "name": "1600x900: identifiers on one line",
+      "status": "PASS",
+      "detail": 1.1111111111111112
+    },
+    {
+      "name": "1600x900: wide tables scroll inside their frame",
+      "status": "PASS"
+    },
+    {
+      "name": "1600x900: header not squashed, text not microscopic",
+      "status": "PASS",
+      "detail": {
+        "topbar": 76,
+        "kpi": 28,
+        "table": 12
+      }
+    },
+    {
+      "name": "1600x900: dialog inside the viewport, close button visible after scrolling",
+      "status": "PASS",
+      "detail": {
+        "inside": true,
+        "closeVisible": true
+      }
+    },
+    {
+      "name": "1366x768: no page-level horizontal scroll",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768: sidebar reachable (every item visible or rail scrolls)",
+      "status": "PASS",
+      "detail": {
+        "scrollable": false,
+        "overflowY": "auto",
+        "hidden": 0,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1366x768: Intelligence visible in the rail without scrolling",
+      "status": "PASS",
+      "detail": {
+        "scrollable": false,
+        "overflowY": "auto",
+        "hidden": 0,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1366x768: rows stay compact (<= 64px)",
+      "status": "PASS",
+      "detail": [
+        "int-accounts:45",
+        "int-workspaces:45",
+        "int-devices:45",
+        "int-tools:45",
+        "int-anomalies:43",
+        "int-priority:45"
+      ]
+    },
+    {
+      "name": "1366x768: identifiers on one line",
+      "status": "PASS",
+      "detail": 1.1111111111111112
+    },
+    {
+      "name": "1366x768: wide tables scroll inside their frame",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x768: header not squashed, text not microscopic",
+      "status": "PASS",
+      "detail": {
+        "topbar": 76,
+        "kpi": 28,
+        "table": 12
+      }
+    },
+    {
+      "name": "1366x768: dialog inside the viewport, close button visible after scrolling",
+      "status": "PASS",
+      "detail": {
+        "inside": true,
+        "closeVisible": true
+      }
+    },
+    {
+      "name": "1280x720: no page-level horizontal scroll",
+      "status": "PASS"
+    },
+    {
+      "name": "1280x720: sidebar reachable (every item visible or rail scrolls)",
+      "status": "PASS",
+      "detail": {
+        "scrollable": false,
+        "overflowY": "auto",
+        "hidden": 0,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1280x720: Intelligence visible in the rail without scrolling",
+      "status": "PASS",
+      "detail": {
+        "scrollable": false,
+        "overflowY": "auto",
+        "hidden": 0,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1280x720: rows stay compact (<= 64px)",
+      "status": "PASS",
+      "detail": [
+        "int-accounts:45",
+        "int-workspaces:45",
+        "int-devices:45",
+        "int-tools:45",
+        "int-anomalies:43",
+        "int-priority:45"
+      ]
+    },
+    {
+      "name": "1280x720: identifiers on one line",
+      "status": "PASS",
+      "detail": 1.1111111111111112
+    },
+    {
+      "name": "1280x720: wide tables scroll inside their frame",
+      "status": "PASS"
+    },
+    {
+      "name": "1280x720: header not squashed, text not microscopic",
+      "status": "PASS",
+      "detail": {
+        "topbar": 76,
+        "kpi": 28,
+        "table": 12
+      }
+    },
+    {
+      "name": "1280x720: dialog inside the viewport, close button visible after scrolling",
+      "status": "PASS",
+      "detail": {
+        "inside": true,
+        "closeVisible": true
+      }
+    },
+    {
+      "name": "1024x768: no page-level horizontal scroll",
+      "status": "PASS"
+    },
+    {
+      "name": "1024x768: sidebar reachable (every item visible or rail scrolls)",
+      "status": "PASS",
+      "detail": {
+        "scrollable": false,
+        "overflowY": "auto",
+        "hidden": 0,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1024x768: Intelligence visible in the rail without scrolling",
+      "status": "PASS",
+      "detail": {
+        "scrollable": false,
+        "overflowY": "auto",
+        "hidden": 0,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1024x768: rows stay compact (<= 64px)",
+      "status": "PASS",
+      "detail": [
+        "int-accounts:45",
+        "int-workspaces:45",
+        "int-devices:45",
+        "int-tools:45",
+        "int-anomalies:43",
+        "int-priority:45"
+      ]
+    },
+    {
+      "name": "1024x768: identifiers on one line",
+      "status": "PASS",
+      "detail": 1.1111111111111112
+    },
+    {
+      "name": "1024x768: wide tables scroll inside their frame",
+      "status": "PASS"
+    },
+    {
+      "name": "1024x768: header not squashed, text not microscopic",
+      "status": "PASS",
+      "detail": {
+        "topbar": 76,
+        "kpi": 28,
+        "table": 12
+      }
+    },
+    {
+      "name": "1024x768: dialog inside the viewport, close button visible after scrolling",
+      "status": "PASS",
+      "detail": {
+        "inside": true,
+        "closeVisible": true
+      }
+    },
+    {
+      "name": "768x1024: no page-level horizontal scroll",
+      "status": "PASS"
+    },
+    {
+      "name": "768x1024: rows stay compact (<= 64px)",
+      "status": "PASS",
+      "detail": [
+        "int-accounts:45",
+        "int-workspaces:45",
+        "int-devices:45",
+        "int-tools:45",
+        "int-anomalies:43",
+        "int-priority:45"
+      ]
+    },
+    {
+      "name": "768x1024: identifiers on one line",
+      "status": "PASS",
+      "detail": 1.1111111111111112
+    },
+    {
+      "name": "768x1024: wide tables scroll inside their frame",
+      "status": "PASS"
+    },
+    {
+      "name": "768x1024: header not squashed, text not microscopic",
+      "status": "PASS",
+      "detail": {
+        "topbar": 62,
+        "kpi": 28,
+        "table": 12
+      }
+    },
+    {
+      "name": "768x1024: dialog inside the viewport, close button visible after scrolling",
+      "status": "PASS",
+      "detail": {
+        "inside": true,
+        "closeVisible": true
+      }
+    },
+    {
+      "name": "1366x633: no page-level horizontal scroll",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x633: sidebar reachable (every item visible or rail scrolls)",
+      "status": "PASS",
+      "detail": {
+        "scrollable": true,
+        "overflowY": "auto",
+        "hidden": 1,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1366x633: Intelligence visible in the rail without scrolling",
+      "status": "PASS",
+      "detail": {
+        "scrollable": true,
+        "overflowY": "auto",
+        "hidden": 1,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1366x633: rows stay compact (<= 64px)",
+      "status": "PASS",
+      "detail": [
+        "int-accounts:45",
+        "int-workspaces:45",
+        "int-devices:45",
+        "int-tools:45",
+        "int-anomalies:43",
+        "int-priority:45"
+      ]
+    },
+    {
+      "name": "1366x633: identifiers on one line",
+      "status": "PASS",
+      "detail": 1.1111111111111112
+    },
+    {
+      "name": "1366x633: wide tables scroll inside their frame",
+      "status": "PASS"
+    },
+    {
+      "name": "1366x633: header not squashed, text not microscopic",
+      "status": "PASS",
+      "detail": {
+        "topbar": 76,
+        "kpi": 28,
+        "table": 12
+      }
+    },
+    {
+      "name": "1366x633: dialog inside the viewport, close button visible after scrolling",
+      "status": "PASS",
+      "detail": {
+        "inside": true,
+        "closeVisible": true
+      }
+    },
+    {
+      "name": "1280x585: no page-level horizontal scroll",
+      "status": "PASS"
+    },
+    {
+      "name": "1280x585: sidebar reachable (every item visible or rail scrolls)",
+      "status": "PASS",
+      "detail": {
+        "scrollable": true,
+        "overflowY": "auto",
+        "hidden": 2,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1280x585: Intelligence visible in the rail without scrolling",
+      "status": "PASS",
+      "detail": {
+        "scrollable": true,
+        "overflowY": "auto",
+        "hidden": 2,
+        "intelligenceVisible": true
+      }
+    },
+    {
+      "name": "1280x585: rows stay compact (<= 64px)",
+      "status": "PASS",
+      "detail": [
+        "int-accounts:45",
+        "int-workspaces:45",
+        "int-devices:45",
+        "int-tools:45",
+        "int-anomalies:43",
+        "int-priority:45"
+      ]
+    },
+    {
+      "name": "1280x585: identifiers on one line",
+      "status": "PASS",
+      "detail": 1.1111111111111112
+    },
+    {
+      "name": "1280x585: wide tables scroll inside their frame",
+      "status": "PASS"
+    },
+    {
+      "name": "1280x585: header not squashed, text not microscopic",
+      "status": "PASS",
+      "detail": {
+        "topbar": 76,
+        "kpi": 28,
+        "table": 12
+      }
+    },
+    {
+      "name": "1280x585: dialog inside the viewport, close button visible after scrolling",
+      "status": "PASS",
+      "detail": {
+        "inside": true,
+        "closeVisible": true
+      }
+    },
+    {
+      "name": "sidebar 1366x633: keyboard focus brings the last item fully into view",
+      "status": "PASS",
+      "detail": {
+        "label": "Documentación",
+        "top": 599,
+        "bottom": 633,
+        "innerHeight": 633,
+        "scrollTop": 20
+      }
+    },
+    {
+      "name": "sidebar 1366x633: mouse wheel scrolls the rail to its last item",
+      "status": "PASS",
+      "detail": {
+        "scrollTop": 54,
+        "lastBottom": 599,
+        "innerHeight": 633
+      }
+    },
+    {
+      "name": "global KPIs match the projection",
+      "status": "PASS",
+      "detail": {
+        "health": 65.73,
+        "executions": 2885
+      }
+    },
+    {
+      "name": "defense mode: navigation collapses to a named icon rail",
+      "status": "PASS",
+      "detail": 76
+    },
+    {
+      "name": "defense mode: dock fixed on screen with the synthetic-data badge",
+      "status": "PASS",
+      "detail": "◆ DEMO ACADÉMICA — DATOS SINTÉTICOS1 Visión global2 Salud3 A"
+    },
+    {
+      "name": "defense mode: dataset banner and bridge status stay visible; local identity is declared",
+      "status": "PASS"
+    },
+    {
+      "name": "guided steps: each step brings its section into view and becomes current",
+      "status": "PASS",
+      "detail": [
+        {
+          "step": "overview",
+          "delta": 12,
+          "atEnd": false,
+          "current": "overview"
+        },
+        {
+          "step": "health",
+          "delta": 12,
+          "atEnd": false,
+          "current": "health"
+        },
+        {
+          "step": "anomaly",
+          "delta": 12,
+          "atEnd": false,
+          "current": "anomaly"
+        },
+        {
+          "step": "priority",
+          "delta": 12,
+          "atEnd": false,
+          "current": "priority"
+        },
+        {
+          "step": "models",
+          "delta": 12,
+          "atEnd": false,
+          "current": "models"
+        },
+        {
+          "step": "conclusion",
+          "delta": 12,
+          "atEnd": true,
+          "current": "conclusion"
+        }
+      ]
+    },
+    {
+      "name": "Health Explorer: score equals the Global Health KPI",
+      "status": "PASS",
+      "detail": "65,73"
+    },
+    {
+      "name": "Health Explorer: four components with the contract values and weights",
+      "status": "PASS",
+      "detail": [
+        {
+          "id": "outcome",
+          "value": "62,63",
+          "meta": "Peso 25% · Aporte 15,66"
+        },
+        {
+          "id": "anomaly",
+          "value": "70,26",
+          "meta": "Peso 25% · Aporte 17,56"
+        },
+        {
+          "id": "processing",
+          "value": "66,86",
+          "meta": "Peso 25% · Aporte 16,72"
+        },
+        {
+          "id": "trend",
+          "value": "63,17",
+          "meta": "Peso 25% · Aporte 15,79"
+        }
+      ]
+    },
+    {
+      "name": "Health Explorer: the formula sums to the published score",
+      "status": "PASS",
+      "detail": "25% × 62,63 + 25% × 70,26 + 25% × 66,86 + 25% × 63,17 = 65,73"
+    },
+    {
+      "name": "Health Explorer: focus moves into the dialog",
+      "status": "PASS",
+      "detail": "int-dialog-close"
+    },
+    {
+      "name": "priority workspace: derived from the queue, with its score and rank",
+      "status": "PASS",
+      "detail": {
+        "title": "workspace_incident",
+        "score": "3,33",
+        "rank": "Prioridad3 de 22 en la cola global · 1 de 5 workspaces",
+        "reference": "Tasa de anomalías98,33%3,47%+94,86 pp▲ Peor que la referencia"
+      }
+    },
+    {
+      "name": "spotlight: the dialog enlarges and can be switched back",
+      "status": "PASS"
+    },
+    {
+      "name": "keyboard: Escape closes and focus returns to the trigger",
+      "status": "PASS"
+    },
+    {
+      "name": "anomaly spotlight: chosen from the data by the documented policy",
+      "status": "PASS",
+      "detail": "exec_v02_0005709"
+    },
+    {
+      "name": "why flagged: observed, median, P95 and deviation match the scored row",
+      "status": "PASS",
+      "detail": {
+        "id": "exec_v02_0005709",
+        "observed": "196,06 s",
+        "median": "11,18 s",
+        "p95": "16,81 s",
+        "ratio": "17,53×",
+        "cards": [
+          {
+            "id": "IF",
+            "flagged": true,
+            "decision": false
+          },
+          {
+            "id": "MAD",
+            "flagged": true,
+            "decision": true
+          },
+          {
+            "id": "IQR",
+            "flagged": true,
+            "decision": false
+          }
+        ],
+        "sentence": "La ejecución duró 17,53 veces la mediana de referencia (1653,29% más)."
+      }
+    },
+    {
+      "name": "why flagged: detector cards match the stored predictions and the calibrated decision",
+      "status": "PASS",
+      "detail": [
+        {
+          "id": "IF",
+          "flagged": true,
+          "decision": false
+        },
+        {
+          "id": "MAD",
+          "flagged": true,
+          "decision": true
+        },
+        {
+          "id": "IQR",
+          "flagged": true,
+          "decision": false
+        }
+      ]
+    },
+    {
+      "name": "why flagged: plain-language comparison with the median",
+      "status": "PASS",
+      "detail": "La ejecución duró 17,53 veces la mediana de referencia (1653,29% más)."
+    },
+    {
+      "name": "keyboard: focus returns to the spotlight button",
+      "status": "PASS"
+    },
+    {
+      "name": "model lab: decision detector read from the model selection metadata",
+      "status": "PASS",
+      "detail": "MAD"
+    },
+    {
+      "name": "comparison mode: IF in focus shows its own count, derived from stored predictions",
+      "status": "PASS",
+      "detail": "IF marcaría 845 de 2885 ejecuciones de la selección actual (29,29%).Coincide con MAD en 810; solo IF: 35; solo MAD: 0."
+    },
+    {
+      "name": "comparison mode: labelled comparison-only; decision detector, filters and Health Score unchanged",
+      "status": "PASS",
+      "detail": {
+        "decision": "MAD",
+        "health": "65,73",
+        "focus": "IF",
+        "agreement": "IF marcaría 845 de 2885 ejecuciones de la selección actual (29,29%).Coincide con MAD en 810; solo IF: 35; solo MAD: 0.",
+        "chip": "Detector en foco SOLO COMPARACIÓN",
+        "detectorFilter": ""
+      }
+    },
+    {
+      "name": "filter impact: before → after for 90 → 30 days, from the projections",
+      "status": "PASS",
+      "detail": {
+        "executions": [
+          "2885",
+          "961"
+        ],
+        "anomalies": [
+          "810",
+          "274"
+        ],
+        "health": [
+          "65,73",
+          "64,75"
+        ],
+        "median": [
+          "10,93 s",
+          "11,18 s"
+        ]
+      }
+    },
+    {
+      "name": "KPI count-up stays between its two values and settles on the exact projection",
+      "status": "PASS",
+      "detail": {
+        "total": "961",
+        "health": "64,75",
+        "frames": 95,
+        "distinct": 25
+      }
+    },
+    {
+      "name": "period comparison: previous window of equal length inside the inference period",
+      "status": "PASS",
+      "detail": "Período actual frente al anteriorActual: 2026-07-29 → 2026-08-27 · Anterior: 2026-06-29 → 2026-07-28MétricaActualPeríodo anteriorCambioSalud global64,7565,42−0,"
+    },
+    {
+      "name": "workspace filter: KPIs recompute for the priority workspace",
+      "status": "PASS",
+      "detail": {
+        "executions": 720,
+        "health": 3.33
+      }
+    },
+    {
+      "name": "priority queue: compact rows and a summary column set",
+      "status": "PASS",
+      "detail": {
+        "max": 45,
+        "columns": 10
+      }
+    },
+    {
+      "name": "priority details: what is wrong, what changed, how serious, what to review",
+      "status": "PASS"
+    },
+    {
+      "name": "workspace row: a click on the row opens its Health Explorer",
+      "status": "PASS"
+    },
+    {
+      "name": "keyboard: Enter on the row identifier opens the explorer",
+      "status": "PASS"
+    },
+    {
+      "name": "keyboard: focus returns to the row identifier",
+      "status": "PASS"
+    },
+    {
+      "name": "keyboard: Space on the row identifier opens the explorer",
+      "status": "PASS"
+    },
+    {
+      "name": "focus visible on the interactive row",
+      "status": "PASS"
+    },
+    {
+      "name": "clickable KPI: Anomalies scrolls to the anomalies table",
+      "status": "PASS"
+    },
+    {
+      "name": "trends: hovering a bar reads its week and value",
+      "status": "PASS"
+    },
+    {
+      "name": "trends: arrow keys read points in order",
+      "status": "PASS",
+      "detail": "Semana del 2026-08-15: 28,13%"
+    },
+    {
+      "name": "trends: Enter opens the data table",
+      "status": "PASS"
+    },
+    {
+      "name": "trends: a shorter period after reading a point keeps every chart working",
+      "status": "PASS"
+    },
+    {
+      "name": "conclusion: derived facts only (priority entity, workspace, anomaly, decision detector)",
+      "status": "PASS",
+      "detail": "ConclusiónConclusión basada en evidenciaEn palabras simples −Operation Suite registra lo que ocurrió. Operation Suite Intelligence agrega qué fue inusual, qué está degradado, qué revisar primero y por"
+    },
+    {
+      "name": "defense aids: conclusion exposes an optional plain-language card",
+      "status": "PASS"
+    },
+    {
+      "name": "glossary: opens as a labelled modal with searchable categories",
+      "status": "PASS",
+      "detail": {
+        "role": "dialog",
+        "modal": "true",
+        "label": "Buscar término",
+        "focus": "int-dialog-close",
+        "categories": [
+          "Todos",
+          "DATOS",
+          "ANÁLISIS",
+          "ANOMALÍAS",
+          "SALUD",
+          "MODELOS",
+          "MÉTRICAS",
+          "DECISIÓN"
+        ],
+        "entries": 42
+      }
+    },
+    {
+      "name": "glossary search: F1 filters immediately by scientific term",
+      "status": "PASS"
+    },
+    {
+      "name": "glossary search: P95 filters immediately",
+      "status": "PASS"
+    },
+    {
+      "name": "glossary search: MAD filters immediately across names and descriptions",
+      "status": "PASS"
+    },
+    {
+      "name": "glossary categories: MODELOS filters without changing the search",
+      "status": "PASS"
+    },
+    {
+      "name": "glossary: Escape closes it and returns focus to its conclusion trigger",
+      "status": "PASS"
+    },
+    {
+      "name": "defense aids: health explanation collapses",
+      "status": "PASS"
+    },
+    {
+      "name": "defense aids: health explanation expands again",
+      "status": "PASS"
+    },
+    {
+      "name": "1280x720 defense mode: dock on screen, no horizontal scroll",
+      "status": "PASS",
+      "detail": {
+        "dock": true,
+        "overflow": false
+      }
+    },
+    {
+      "name": "reduced motion: KPIs update without counting animation",
+      "status": "PASS",
+      "detail": {
+        "instant": "224",
+        "page": "Puente local no disponible\nES\nMC\nCONTEXTO DE ACCESO DE DEMOSTRACIÓN\nSuper Administrador · Operations Suite\nSupervisión de todas las cuentas de demostración.\nMuestra\nOPERATIONS INTELLIGENCE\nOperations Intelligence\n\nSalud operativa, detección",
+        "url": "http://127.0.0.1:5177/",
+        "errors": [
+          {
+            "source": "network",
+            "level": "error",
+            "text": "Failed to load resource: net::ERR_CONNECTION_REFUSED",
+            "timestamp": 1789856997867.997,
+            "url": "http://127.0.0.1:4317/v1/health",
+            "networkRequestId": "12684.65"
+          }
+        ]
+      }
+    },
+    {
+      "name": "English: defense experience translated, synthetic badge kept",
+      "status": "PASS"
+    },
+    {
+      "name": "exit: defense mode off restores the full navigation",
+      "status": "PASS"
+    },
+    {
+      "name": "no browser exceptions or unexpected errors",
+      "status": "PASS",
+      "detail": []
+    }
+  ],
+  "screenshots": [
+    "10-sidebar-1366x633.png",
+    "01-intelligence-global.png",
+    "08-projector-1366x768.png",
+    "02-health-explorer.png",
+    "03-workspace-priority.png",
+    "04-anomaly-spotlight.png",
+    "05-why-flagged.png",
+    "06-model-comparison.png",
+    "07-filter-impact.png",
+    "defense-conclusion-glossary-button.png",
+    "defense-glossary.png",
+    "defense-glossary-search-f1.png",
+    "defense-simple-explanation-health.png",
+    "defense-simple-explanation-models.png",
+    "09-projector-1280x720.png",
+    "11-defense-1920x1080.png"
+  ],
+  "exceptions": [],
+  "expectedBridgeUnavailable": 1
+}

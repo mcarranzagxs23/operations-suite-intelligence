@@ -1,0 +1,33 @@
+{
+  "datasetVersion": "0.1.0",
+  "dataOrigin": "SYNTHETIC",
+  "seed": 20260901,
+  "generatedEventCount": 1440,
+  "timeRange": {
+    "minCompletedAt": "2026-06-01T08:22:30.000Z",
+    "maxCompletedAt": "2026-08-29T15:49:19.000Z"
+  },
+  "tools": {
+    "clean-vector-pro": 667,
+    "sepmaker-pro": 773
+  },
+  "workspaces": {
+    "ws_finishing_a": 333,
+    "ws_prepress_a": 382,
+    "ws_prepress_b": 362,
+    "ws_production_a": 363
+  },
+  "statuses": {
+    "cancelled": 40,
+    "failure": 75,
+    "success": 1325
+  },
+  "anomalies": {
+    "total": 111,
+    "successful": 93,
+    "patterns": {
+      "duration_drop": 15,
+      "duration_spike": 96
+    }
+  }
+}

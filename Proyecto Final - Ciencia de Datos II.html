@@ -1,0 +1,241 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Operation Suite Intelligence — Proyecto Final</title><style>
+@page{size:A4;margin:19mm}body{font:11pt/1.5 Arial,sans-serif;color:#142635;max-width:800px;margin:auto}h1{font-size:25pt;color:#123d51}h2{font-size:17pt;margin-top:26px;border-bottom:2px solid #318194;padding-bottom:6px;break-after:avoid}h3{font-size:13pt;break-after:avoid}table{width:100%;border-collapse:collapse;font-size:9pt;margin:14px 0}td,th{border:1px solid #a8bac2;padding:7px;text-align:left}th{background:#e5eff2}tr{break-inside:avoid}img{max-width:100%;max-height:100mm;display:block;margin:12px auto}p,li{orphans:3;widows:3}a{color:#16536a;overflow-wrap:anywhere}pre{white-space:pre-wrap}code{font-size:9pt}h1+ h2{border:0}body>h1:first-child{padding-top:25mm}body>h2:nth-of-type(2){break-before:page}
+</style></head><body><h1>PROYECTO FINAL — Ciencia de Datos II</h1>
+<h2>Operation Suite Intelligence</h2>
+<h3>Sistema de salud, detección de anomalías y priorización operativa</h3>
+<table>
+<thead>
+<tr>
+<th>Portada</th>
+<th>Información</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Estudiante</td>
+<td>Miguel Angel Carranza Avilez</td>
+</tr>
+<tr>
+<td>Docente</td>
+<td>Ing. Naomy Ríos</td>
+</tr>
+<tr>
+<td>Curso</td>
+<td>Ciencia de Datos II</td>
+</tr>
+<tr>
+<td>Fecha de cierre</td>
+<td>15 de septiembre de 2026</td>
+</tr>
+<tr>
+<td>Proyecto individual</td>
+<td>Operation Suite Intelligence</td>
+</tr>
+<tr>
+<td>Sistema base</td>
+<td>Operations Suite</td>
+</tr>
+<tr>
+<td>Alcance de entrega</td>
+<td>Integración local funcional; dataset académico sintético; sin despliegue productivo</td>
+</tr>
+</tbody></table>
+<h2>1. Descripción del proyecto original</h2>
+<p>Operations Suite administra cuentas, workspaces, permisos, herramientas, estaciones y telemetría operacional. Sus motores se ejecutan localmente en Illustrator. La plataforma base está terminada; el proyecto individual de Ciencia de Datos es únicamente Intelligence. Esta entrega añade análisis a la consola existente con una vista React nativa y exclusiva del Super Administrador.</p>
+<h2>2. Problema seleccionado</h2>
+<p>Un listado de ejecuciones describe qué ocurrió, pero exige revisión manual para distinguir duración atípica, deterioro operativo y entidades que merecen atención primero. El problema seleccionado es convertir esa telemetría mínima en evidencia comparable, contextual y explicable. Una anomalía temporal puede haber terminado con éxito; un fallo puede durar poco. Por ello se mantienen separados el detector de duración y el resultado operativo.</p>
+<h2>3. Objetivos</h2>
+<ul>
+<li>Construir un pipeline reproducible con contrato, ETL, EDA, entrenamiento, evaluación e inferencia.</li>
+<li>Comparar Isolation Forest con MAD e IQR mediante partición temporal global y selección exclusiva por calibración.</li>
+<li>Derivar salud, tendencias y prioridad por cuenta, workspace, dispositivo y herramienta, sin confundir IDs iguales entre cuentas.</li>
+<li>Integrar resultados validados en Operations Suite, con filtros, explicaciones determinísticas, acceso protegido y ES/EN.</li>
+<li>Demostrar decisiones prudentes sin atribuir causas técnicas no medidas ni evaluar empleados.</li>
+</ul>
+<h2>4. Dataset</h2>
+<p>El dataset v0.2 (0.2.0) contiene <strong>6125 ejecuciones sintéticas</strong>, tres cuentas, cinco workspaces, diez dispositivos y dos herramientas. Cubre 180 días, del 1 de marzo al 27 de agosto de 2026. La semilla 20260915 reproduce las observaciones. Los primeros 90 días permiten desarrollo/evaluación; los siguientes 90, inferencia de escenarios operativos.</p>
+<p>v0.1 se conserva íntegro como evidencia del avance, con módulos históricos en &#39;data-science/legacy/v0.1/&#39;. Sus métricas no se mezclan con esta evaluación final.</p>
+<p>&#39;SYNTHETIC&#39; indica generación académica. &#39;REAL_CONTROLLED&#39; corresponde al adaptador de telemetría autorizada: usa lista cerrada de campos, etiquetas desconocidas null y lecturas acotadas. La entrega no incorpora datos empresariales reales. No se usan arte, nombres de documento, rutas, MAC, correos ni credenciales como variables. IDs sirven para agrupar y aislar, nunca para entrenar.</p>
+<p>Los cinco escenarios tienen comportamiento propio: actividad saludable, seguimiento, riesgo elevado, incidente crítico y muestra insuficiente. Los scores no se asignan manualmente: se calculan después de inferir las ejecuciones. La generación de escenarios facilita la defensa pero también limita la validez externa.</p>
+<h2>5. Proceso de Ciencia de Datos</h2>
+<h3>Obtención</h3>
+<p>&#39;generateScenarios&#39; produce los eventos sintéticos; &#39;telemetry-adapter.mjs&#39; prepara extracción autorizada del emulador. La extracción exige claim Super Admin y cuenta explícita, con máximo de 1.000 eventos actuales, 1.000 de referencia, 400 dispositivos y 500 agregados diarios. La cobertura incompleta se declara y evita afirmar salud precisa.</p>
+<h3>ETL y limpieza</h3>
+<p>Se validan esquema, fechas ISO, semver, origen, duración y categorías. Los duplicados idénticos se deduplican; todos los participantes de un conflicto se aíslan. Las claves compuestas incluyen cuenta y workspace. Se derivan segundos, &#39;log1p(duration_ms)&#39; y atributos temporales. Las etiquetas conocidas se reservan a evaluación; unknown/null no se convierten en normales. Resultado de esta ejecución: 6125 entradas, 6125 aceptadas, 0 rechazadas y 0 conflictos.</p>
+<h3>EDA</h3>
+<p>El proceso genera 32 figuras desde observaciones y métricas, más &#39;EDA_FIGURES.pdf&#39;. Para la defensa se seleccionan distribución de duración, resultados operativos, comparación de detectores y evolución temporal. Las tablas de salud y prioridad complementan el EDA con resultados operativos derivados.</p>
+<p><img src="data-science/artifacts/v0.2/figures/histogram-clean-vector-pro.svg" alt="Distribución de duración"></p>
+<p>La duración tiene una escala dependiente de la herramienta. Se modela por herramienta/acción y se transforma a escala logarítmica para comparar desviaciones relativas.</p>
+<p><img src="data-science/artifacts/v0.2/figures/status.svg" alt="Resultados operativos"></p>
+<p>El resultado operativo se mantiene separado de la etiqueta de anomalía: la duración atípica no demuestra fallo.</p>
+<p><img src="data-science/artifacts/v0.2/figures/executions.svg" alt="Ejecuciones en el tiempo"></p>
+<h2>6. Modelos utilizados</h2>
+<h3>Isolation Forest — modelo ML académico principal</h3>
+<p>Isolation Forest aísla observaciones mediante particiones aleatorias y asigna mayor rareza a caminos promedio más cortos [1]. La implementación serializable usa 200 árboles y submuestras de 256, con una variable: &#39;log_duration&#39;. Excluye status, etiquetas e identificadores. No produce una probabilidad de fallo. El umbral IF es el percentil 95 de scores de calibración.</p>
+<p>La implementación se contrastó con scikit-learn [2] bajo las mismas particiones y parámetros: correlaciones Spearman 0.9420 y 0.9573. El criterio previo fue ≥0,90. No se exige identidad de árboles porque cambian el generador aleatorio y la construcción de particiones. Se conserva &#39;reference-validation.json&#39; con esas diferencias.</p>
+<h3>MAD e IQR — baselines estadísticos</h3>
+<p>MAD calcula la distancia robusta absoluta 0,6745 × (log duración − mediana) / MAD; su umbral fijo es 3,5. Si MAD es cero se aplica un respaldo explícito probado para valores constantes. IQR usa distancia fuera de Q1/Q3 normalizada por su rango intercuartílico; su umbral es 1,5. Los tres detectores se evalúan independientemente, sin una unión que infle el resultado.</p>
+<h3>Partición y decisión</h3>
+<table>
+<thead>
+<tr>
+<th>Partición</th>
+<th>Días</th>
+<th>Inicio</th>
+<th>Fin</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>train</td>
+<td>54</td>
+<td>2026-03-01</td>
+<td>2026-04-23</td>
+</tr>
+<tr>
+<td>calibration</td>
+<td>18</td>
+<td>2026-04-24</td>
+<td>2026-05-11</td>
+</tr>
+<tr>
+<td>test</td>
+<td>18</td>
+<td>2026-05-12</td>
+<td>2026-05-29</td>
+</tr>
+<tr>
+<td>inference</td>
+<td>90</td>
+<td>2026-05-30</td>
+<td>2026-08-27</td>
+</tr>
+</tbody></table>
+<p>Se elige el detector por F1 en calibration entre candidatos fijos. Los empates prefieren MAD, IQR e IF en ese orden. Test no ajusta umbrales ni selección: una prueba altera sus resultados y confirma que las decisiones de calibración permanecen iguales. En ambos grupos se seleccionó <strong>MAD</strong>. El conjunto test permanece reservado a evaluación; inference contiene datos posteriores, puntuados con el artefacto guardado y sin reentrenar.</p>
+<h2>7. Resultados y métricas</h2>
+<p>Evaluación reservada: 648 ejecuciones con 648 etiquetas conocidas.</p>
+<table>
+<thead>
+<tr>
+<th>Detector</th>
+<th>Precision</th>
+<th>Recall</th>
+<th>F1</th>
+<th>TP</th>
+<th>FP</th>
+<th>TN</th>
+<th>FN</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IF</td>
+<td>0.7895</td>
+<td>1.0000</td>
+<td>0.8824</td>
+<td>30</td>
+<td>8</td>
+<td>610</td>
+<td>0</td>
+</tr>
+<tr>
+<td>MAD</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>1.0000</td>
+<td>30</td>
+<td>0</td>
+<td>618</td>
+<td>0</td>
+</tr>
+<tr>
+<td>IQR</td>
+<td>0.8571</td>
+<td>1.0000</td>
+<td>0.9231</td>
+<td>30</td>
+<td>5</td>
+<td>613</td>
+<td>0</td>
+</tr>
+</tbody></table>
+<p><img src="data-science/artifacts/v0.2/figures/detector-comparison.svg" alt="Comparación de detectores"></p>
+<p><strong>MAD supera a Isolation Forest en este dataset.</strong> La aplicación lo muestra y usa MAD para decisiones. El desempeño perfecto de MAD refleja este escenario sintético, no garantiza desempeño en producción. IF conserva su función como modelo ML académico comparado honestamente con baselines.</p>
+<h3>Artefacto e inferencia</h3>
+<p>&#39;model.json&#39; contiene árboles, semillas, parámetros, umbrales, selección y períodos. &#39;score&#39; carga ese artefacto y puntúa nuevas observaciones sin llamar al entrenamiento. &#39;intelligence-result.json&#39; versión 2.0.0 presenta 2885 ejecuciones del período de inferencia. El navegador recibe ese contrato por HTTP protegido, nunca CSV arbitrario ni el artefacto de entrenamiento.</p>
+<h3>Health Score</h3>
+<p>Se promedian con pesos iguales cuatro componentes 0–100: éxito operativo; complemento del límite superior Wilson de la tasa de anomalías; deterioro de mediana respecto al rango mediana–P95 histórico por herramienta/acción/versión; y deterioro máximo entre anomalías, fallos, cancelaciones y duración. La referencia académica es train, siempre anterior a la ventana visible. El componente trend es una puntuación de estabilidad, no un porcentaje de crecimiento. Los gráficos agregan semanas; no se interpola salud cuando falta muestra.</p>
+<p>Se requieren al menos 20 ejecuciones tanto actuales como históricas por grupo comparable. Healthy ≥90; monitor ≥75; high_risk ≥60; critical &lt;60. Si la referencia o muestra no alcanza, el estado es insufficient_data y el score es null. Los umbrales de salud son una política operativa explícita, no parámetros aprendidos ni clínicamente validados.</p>
+<table>
+<thead>
+<tr>
+<th>Cuenta</th>
+<th>Workspace</th>
+<th>Health Score</th>
+<th>Estado</th>
+<th>Ejecuciones</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>account_demo_b</td>
+<td>workspace_incident</td>
+<td>3.33</td>
+<td>critical</td>
+<td>720</td>
+</tr>
+<tr>
+<td>account_demo_b</td>
+<td>workspace_shared</td>
+<td>71.85</td>
+<td>high_risk</td>
+<td>720</td>
+</tr>
+<tr>
+<td>account_demo_a</td>
+<td>workspace_review</td>
+<td>88.31</td>
+<td>monitor</td>
+<td>720</td>
+</tr>
+<tr>
+<td>account_demo_a</td>
+<td>workspace_shared</td>
+<td>96.35</td>
+<td>healthy</td>
+<td>720</td>
+</tr>
+<tr>
+<td>account_demo_c</td>
+<td>workspace_sparse</td>
+<td>Sin score</td>
+<td>insufficient_data</td>
+<td>5</td>
+</tr>
+</tbody></table>
+<h3>Priority y Why Flagged</h3>
+<p>Se ordena primero por estado y menor salud, luego por tasas normalizadas, severidad, estabilidad, confianza y desempates determinísticos. El volumen no es una penalización independiente; interviene en la incertidumbre y como desempate tardío. Las entidades con muestra insuficiente requieren más evidencia y se distinguen de un incidente confirmado.</p>
+<p>Why Flagged muestra duración observada, mediana y P95 de referencia, desviación, scores y umbrales IF/MAD/IQR, intervalo IQR convertido a segundos, detector de decisión, severidad, resultado y acción. Las recomendaciones consisten en revisar ejecuciones, verificar consistencia de versiones o monitorear. Nunca se atribuyen problemas de CPU, red o desempeño del operador.</p>
+<h2>8. Decisiones que se pueden tomar</h2>
+<p>El Super Admin puede empezar por &#39;device_incident_0&#39; de &#39;account_demo_b&#39;, revisar evidencia y ejecuciones de su contexto y comparar herramientas/versiones antes de actuar. Puede acotar la revisión a una cuenta, workspace o dispositivo, variar 7/30/90 días y contrastar detectores. El resultado orienta revisión; no suspende estaciones ni cambia permisos automáticamente.</p>
+<h2>9. Valor agregado demostrado</h2>
+<p>La integración transforma un historial de ejecuciones en una cola de revisión explicada y navegable. Incluye diez KPI derivados, tablas ordenables/paginadas, seis tendencias, filtros, detalles accesibles y ES/EN. Se mantiene el aislamiento por cuenta incluso ante workspaces con el mismo ID. La navegación, el servicio y la proyección niegan roles menores; el backend de Emulator verifica tokens reales. El modo offline sirve exclusivamente el dataset sintético mediante una capacidad local: representa una identidad de demostración, no autentica a una persona real.</p>
+<p>La validación ejecutada y sus cantidades vigentes están en <a href="docs/data-science/FINAL_ACCEPTANCE.md">FINAL_ACCEPTANCE.md</a>. La demo está documentada en <a href="DEMO_RUNBOOK.md">DEMO_RUNBOOK.md</a>.</p>
+<h2>10. Limitaciones</h2>
+<ul>
+<li>Datos sintéticos y una variable de duración: no se demuestra generalización empresarial ni causalidad.</li>
+<li>Escenarios conocidos al diseñar el generador; hacen la demostración reproducible pero pueden favorecer baselines sencillos.</li>
+<li>Políticas de salud/prioridad requieren validación con responsables operativos antes de uso real.</li>
+<li>Telemetría autorizada queda preparada y probada contra Emulator; no se realizó extracción ni despliegue productivo.</li>
+<li>Unknown/null no permite precision/recall/F1; se presenta como no evaluable.</li>
+<li>El filtro de detector distinto al calibrado es exploratorio. Las métricas test no cambian con períodos, outcome o severidad para evitar sesgar el benchmark.</li>
+<li>Campos filtrados pueden dejar referencia insuficiente. La UI conserva null; no rellena scores artificiales.</li>
+<li>Sin alertas automáticas, jobs pagos, entrenamiento en React ni ingestión continua.</li>
+</ul>
+<h2>11. Futuras mejoras</h2>
+<p>Validar con telemetría autorizada y etiquetas revisadas; medir drift y costo de falsos positivos; evaluar variables operativas adicionales solo si son legítimas y medibles; versionar recalibraciones; validar umbrales de salud y comparar contra decisiones de un supervisor. Cada ampliación productiva requiere su propio alcance y revisión.</p>
+<h2>12. Reproducción y defensa</h2>
+<p>Seguir los comandos exactos del <a href="data-science/README.md">README académico</a>. Los artefactos finales se generan fuera de React. La defensa dura 10–12 minutos y cuenta con <a href="PRESENTATION_OUTLINE.md">PRESENTATION_OUTLINE.md</a>. Los PDFs de avance se conservan como historia; este documento es el proyecto final individual.</p>
+<h2>13. Bibliografía</h2>
+<ol>
+<li>Liu, F. T., Ting, K. M. y Zhou, Z.-H. (2008). <em>Isolation Forest</em>. IEEE ICDM, 413–422. DOI 10.1109/ICDM.2008.17. <a href="https://cs.nju.edu.cn/zhouzh/zhouzh.files/publication/icdm08b.pdf">Texto de los autores</a>.</li>
+<li>scikit-learn. <em>IsolationForest API</em>. Referencia independiente de implementación y convención de score. <a href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.IsolationForest.html">Documentación oficial</a>. La ejecución local usa 1.7.2.</li>
+<li>Código y evidencia reproducible del proyecto: &#39;dataset-etl.mjs&#39;, &#39;model-analysis.mjs&#39;, &#39;src/intelligence/analysis.js&#39;, &#39;metrics.json&#39;, &#39;quality.json&#39; y &#39;reference-validation.json&#39;.</li>
+</ol>
+</body></html>

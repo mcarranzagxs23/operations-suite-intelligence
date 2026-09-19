@@ -1,0 +1,19 @@
+{
+  "inputRows": 1440,
+  "acceptedRows": 1440,
+  "rejectedRows": 0,
+  "dataOrigins": {
+    "SYNTHETIC": 1440
+  },
+  "tools": {
+    "clean-vector-pro": 667,
+    "sepmaker-pro": 773
+  },
+  "statuses": {
+    "cancelled": 40,
+    "failure": 75,
+    "success": 1325
+  },
+  "expectedAnomalies": 111,
+  "rejectionReasons": {}
+}

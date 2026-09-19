@@ -1,0 +1,5 @@
+# Las pruebas fijan el SHA-256 de cada artefacto científico versionado.
+# Git no debe normalizar sus finales de línea: los bytes deben sobrevivir
+# al clon en cualquier sistema operativo, o la verificación de integridad falla.
+data-science/artifacts/** -text
+data-science/data/** -text

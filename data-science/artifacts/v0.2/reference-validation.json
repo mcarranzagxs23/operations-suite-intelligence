@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "python": "3.12.10",
+  "numpy": "2.3.3",
+  "scikit_learn": "1.7.2",
+  "criterion": "Spearman correlation >= 0.90 on held-out scores per tool/action; exact tree equality is not expected.",
+  "differences": "Independent RNG and split construction; exact harmonic normalization in JS versus approximation in sklearn. Identical partitions, 200 trees, 256 samples, log_duration and calibration quantile.",
+  "results": [
+    {
+      "group": "clean-vector-pro__CLEAN ART",
+      "spearman_score_correlation": 0.9419559621758052,
+      "threshold": 0.631601415865616,
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.8888888888888888,
+      "confusion_matrix": [
+        [
+          309,
+          3
+        ],
+        [
+          0,
+          12
+        ]
+      ],
+      "behavior_check_pass": true
+    },
+    {
+      "group": "sepmaker-pro__Apply",
+      "spearman_score_correlation": 0.9573423723120659,
+      "threshold": 0.6342429731623709,
+      "precision": 0.782608695652174,
+      "recall": 1.0,
+      "f1": 0.8780487804878049,
+      "confusion_matrix": [
+        [
+          301,
+          5
+        ],
+        [
+          0,
+          18
+        ]
+      ],
+      "behavior_check_pass": true
+    }
+  ]
+}

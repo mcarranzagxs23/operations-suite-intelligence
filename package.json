@@ -1,0 +1,34 @@
+{
+  "name": "operations-suite-intelligence",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "description": "Operations Suite Intelligence — proyecto final de Ciencia de Datos II. Deteccion de anomalias sobre telemetria de operaciones, integrada como vista nativa del Super Administrador.",
+  "scripts": {
+    "demo:intelligence": "node scripts/start-intelligence.mjs",
+    "data-science:generate": "node data-science/scripts/pipeline-final.mjs generate",
+    "data-science:etl": "node data-science/scripts/pipeline-final.mjs etl",
+    "data-science:eda": "node data-science/scripts/pipeline-final.mjs eda",
+    "data-science:train": "node data-science/scripts/train-final.mjs",
+    "data-science:evaluate": "node data-science/scripts/pipeline-final.mjs evaluate",
+    "data-science:score": "node data-science/scripts/pipeline-final.mjs score",
+    "data-science:intelligence": "node data-science/scripts/build-result.mjs",
+    "test:data-science": "node --test data-science/tests/*.test.mjs",
+    "test:intelligence": "node --test tests/intelligence-service.test.mjs tests/intelligence-presentation.test.mjs tests/intelligence-layout.test.mjs tests/intelligence-defense-glossary.test.mjs",
+    "verify:intelligence-browser": "node scripts/verify-intelligence-browser.mjs",
+    "verify:intelligence-defense": "node scripts/verify-intelligence-defense.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "firebase": "12.17.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "6.0.5",
+    "firebase-admin": "^14.2.0",
+    "vite": "8.2.1"
+  }
+}

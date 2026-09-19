@@ -1,0 +1,309 @@
+{
+  "methodology": {
+    "healthAggregation": "unweighted mean of available components",
+    "anomalyAdjustment": "95% Wilson upper bound",
+    "priorityOrder": "health status, health score, high severity anomalies, degradation, failures, recency, id",
+    "minimumRuns": 20
+  },
+  "global": {
+    "entityId": "global",
+    "entityType": "global",
+    "totalRuns": 433,
+    "healthScore": 95.65,
+    "healthStatus": "healthy",
+    "components": {
+      "outcomeHealth": 92.84,
+      "anomalyHealth": 89.75,
+      "processingHealth": 100,
+      "trendHealth": 100
+    },
+    "counts": {
+      "successful": 402,
+      "failures": 23,
+      "cancelled": 8,
+      "anomalies": 32,
+      "highSeverityAnomalies": 7
+    },
+    "latestAnomalyAt": "2026-08-29T15:07:59.000Z",
+    "reasons": [
+      "32 anomalous executions in the selected period.",
+      "23 failures and 8 cancellations were recorded."
+    ]
+  },
+  "workspaces": [
+    {
+      "entityId": "ws_production_a",
+      "entityType": "workspace",
+      "totalRuns": 107,
+      "healthScore": 90.09,
+      "healthStatus": "healthy",
+      "components": {
+        "outcomeHealth": 94.39,
+        "anomalyHealth": 88.3,
+        "processingHealth": 90.62,
+        "trendHealth": 87.05
+      },
+      "counts": {
+        "successful": 101,
+        "failures": 5,
+        "cancelled": 1,
+        "anomalies": 6,
+        "highSeverityAnomalies": 1
+      },
+      "latestAnomalyAt": "2026-08-20T09:14:00.000Z",
+      "reasons": [
+        "6 anomalous executions in the selected period.",
+        "5 failures and 1 cancellations were recorded.",
+        "Recent operational behavior degraded versus the prior period.",
+        "dev_win_03 accounts for 6 anomalies in this workspace.",
+        "sepmaker-pro accounts for 4 anomalies in this workspace."
+      ],
+      "priorityRank": 1
+    },
+    {
+      "entityId": "ws_finishing_a",
+      "entityType": "workspace",
+      "totalRuns": 100,
+      "healthScore": 91.64,
+      "healthStatus": "healthy",
+      "components": {
+        "outcomeHealth": 92,
+        "anomalyHealth": 82.56,
+        "processingHealth": 100,
+        "trendHealth": 92
+      },
+      "counts": {
+        "successful": 92,
+        "failures": 7,
+        "cancelled": 1,
+        "anomalies": 10,
+        "highSeverityAnomalies": 3
+      },
+      "latestAnomalyAt": "2026-08-29T15:07:59.000Z",
+      "reasons": [
+        "10 anomalous executions in the selected period.",
+        "7 failures and 1 cancellations were recorded.",
+        "dev_mac_01 accounts for 10 anomalies in this workspace.",
+        "sepmaker-pro accounts for 10 anomalies in this workspace."
+      ],
+      "priorityRank": 2
+    },
+    {
+      "entityId": "ws_prepress_a",
+      "entityType": "workspace",
+      "totalRuns": 129,
+      "healthScore": 92.89,
+      "healthStatus": "healthy",
+      "components": {
+        "outcomeHealth": 90.7,
+        "anomalyHealth": 85.38,
+        "processingHealth": 100,
+        "trendHealth": 95.48
+      },
+      "counts": {
+        "successful": 117,
+        "failures": 7,
+        "cancelled": 5,
+        "anomalies": 11,
+        "highSeverityAnomalies": 2
+      },
+      "latestAnomalyAt": "2026-08-29T14:22:57.000Z",
+      "reasons": [
+        "11 anomalous executions in the selected period.",
+        "7 failures and 5 cancellations were recorded.",
+        "dev_win_01 accounts for 11 anomalies in this workspace.",
+        "sepmaker-pro accounts for 8 anomalies in this workspace."
+      ],
+      "priorityRank": 3
+    },
+    {
+      "entityId": "ws_prepress_b",
+      "entityType": "workspace",
+      "totalRuns": 97,
+      "healthScore": 93.08,
+      "healthStatus": "healthy",
+      "components": {
+        "outcomeHealth": 94.85,
+        "anomalyHealth": 88.5,
+        "processingHealth": 94.65,
+        "trendHealth": 94.33
+      },
+      "counts": {
+        "successful": 92,
+        "failures": 4,
+        "cancelled": 1,
+        "anomalies": 5,
+        "highSeverityAnomalies": 1
+      },
+      "latestAnomalyAt": "2026-08-27T12:46:14.000Z",
+      "reasons": [
+        "5 anomalous executions in the selected period.",
+        "4 failures and 1 cancellations were recorded.",
+        "dev_win_02 accounts for 5 anomalies in this workspace.",
+        "clean-vector-pro accounts for 3 anomalies in this workspace."
+      ],
+      "priorityRank": 4
+    }
+  ],
+  "devices": [
+    {
+      "entityId": "dev_win_03",
+      "entityType": "device",
+      "totalRuns": 107,
+      "healthScore": 90.09,
+      "healthStatus": "healthy",
+      "components": {
+        "outcomeHealth": 94.39,
+        "anomalyHealth": 88.3,
+        "processingHealth": 90.62,
+        "trendHealth": 87.05
+      },
+      "counts": {
+        "successful": 101,
+        "failures": 5,
+        "cancelled": 1,
+        "anomalies": 6,
+        "highSeverityAnomalies": 1
+      },
+      "latestAnomalyAt": "2026-08-20T09:14:00.000Z",
+      "reasons": [
+        "6 anomalous executions in the selected period.",
+        "5 failures and 1 cancellations were recorded.",
+        "Recent operational behavior degraded versus the prior period."
+      ],
+      "priorityRank": 1
+    },
+    {
+      "entityId": "dev_mac_01",
+      "entityType": "device",
+      "totalRuns": 100,
+      "healthScore": 91.64,
+      "healthStatus": "healthy",
+      "components": {
+        "outcomeHealth": 92,
+        "anomalyHealth": 82.56,
+        "processingHealth": 100,
+        "trendHealth": 92
+      },
+      "counts": {
+        "successful": 92,
+        "failures": 7,
+        "cancelled": 1,
+        "anomalies": 10,
+        "highSeverityAnomalies": 3
+      },
+      "latestAnomalyAt": "2026-08-29T15:07:59.000Z",
+      "reasons": [
+        "10 anomalous executions in the selected period.",
+        "7 failures and 1 cancellations were recorded."
+      ],
+      "priorityRank": 2
+    },
+    {
+      "entityId": "dev_win_01",
+      "entityType": "device",
+      "totalRuns": 129,
+      "healthScore": 92.89,
+      "healthStatus": "healthy",
+      "components": {
+        "outcomeHealth": 90.7,
+        "anomalyHealth": 85.38,
+        "processingHealth": 100,
+        "trendHealth": 95.48
+      },
+      "counts": {
+        "successful": 117,
+        "failures": 7,
+        "cancelled": 5,
+        "anomalies": 11,
+        "highSeverityAnomalies": 2
+      },
+      "latestAnomalyAt": "2026-08-29T14:22:57.000Z",
+      "reasons": [
+        "11 anomalous executions in the selected period.",
+        "7 failures and 5 cancellations were recorded."
+      ],
+      "priorityRank": 3
+    },
+    {
+      "entityId": "dev_win_02",
+      "entityType": "device",
+      "totalRuns": 97,
+      "healthScore": 93.08,
+      "healthStatus": "healthy",
+      "components": {
+        "outcomeHealth": 94.85,
+        "anomalyHealth": 88.5,
+        "processingHealth": 94.65,
+        "trendHealth": 94.33
+      },
+      "counts": {
+        "successful": 92,
+        "failures": 4,
+        "cancelled": 1,
+        "anomalies": 5,
+        "highSeverityAnomalies": 1
+      },
+      "latestAnomalyAt": "2026-08-27T12:46:14.000Z",
+      "reasons": [
+        "5 anomalous executions in the selected period.",
+        "4 failures and 1 cancellations were recorded."
+      ],
+      "priorityRank": 4
+    }
+  ],
+  "tools": [
+    {
+      "entityId": "sepmaker-pro",
+      "entityType": "tool",
+      "totalRuns": 232,
+      "healthScore": 93.9,
+      "healthStatus": "healthy",
+      "components": {
+        "outcomeHealth": 92.24,
+        "anomalyHealth": 85.07,
+        "processingHealth": 100,
+        "trendHealth": 98.28
+      },
+      "counts": {
+        "successful": 214,
+        "failures": 13,
+        "cancelled": 5,
+        "anomalies": 24,
+        "highSeverityAnomalies": 6
+      },
+      "latestAnomalyAt": "2026-08-29T15:07:59.000Z",
+      "reasons": [
+        "24 anomalous executions in the selected period.",
+        "13 failures and 5 cancellations were recorded."
+      ],
+      "priorityRank": 1
+    },
+    {
+      "entityId": "clean-vector-pro",
+      "entityType": "tool",
+      "totalRuns": 201,
+      "healthScore": 96.47,
+      "healthStatus": "healthy",
+      "components": {
+        "outcomeHealth": 93.53,
+        "anomalyHealth": 92.34,
+        "processingHealth": 100,
+        "trendHealth": 100
+      },
+      "counts": {
+        "successful": 188,
+        "failures": 10,
+        "cancelled": 3,
+        "anomalies": 8,
+        "highSeverityAnomalies": 1
+      },
+      "latestAnomalyAt": "2026-08-28T08:44:22.000Z",
+      "reasons": [
+        "8 anomalous executions in the selected period.",
+        "10 failures and 3 cancellations were recorded."
+      ],
+      "priorityRank": 2
+    }
+  ]
+}

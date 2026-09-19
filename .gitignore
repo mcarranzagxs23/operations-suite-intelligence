@@ -1,0 +1,80 @@
+# Dependencies and generated web artifacts
+node_modules/
+dist/
+coverage/
+.nyc_output/
+.vite/
+test-results/
+playwright-report/
+
+# Environment values and service credentials — never version private values
+.env
+.env.*
+!.env.example
+!.env.template
+.envrc
+firebase-adminsdk-*.json
+*-firebase-adminsdk-*.json
+service-account*.json
+credentials/
+keys/
+certificates/
+secrets/
+.secrets/
+.private/
+
+# Local logs, caches, and Firebase emulator artifacts
+*.log
+*.tmp
+*.temp
+.cache/
+.firebase/
+firebase/emulator-data/
+firebase-debug.log
+ui-debug.log
+functions/.env
+functions/.env.*
+
+# Adobe / CEP local test output — source prototypes remain trackable
+prototypes/**/.debug
+prototypes/**/debug/
+prototypes/**/logs/
+prototypes/**/screenshots/
+prototypes/**/build/
+prototypes/**/dist/
+prototypes/**/*.zxp
+prototypes/**/*.ccx
+prototypes/**/*.jsxbin
+prototypes/**/*.p12
+
+# Operations Suite CEP panel local output — source remains trackable
+extensions/**/.debug
+extensions/**/debug/
+extensions/**/logs/
+extensions/**/screenshots/
+extensions/**/build/
+extensions/**/dist/
+extensions/**/*.zxp
+extensions/**/*.ccx
+extensions/**/*.jsxbin
+extensions/**/*.p12
+extensions/**/*.pem
+extensions/**/*.key
+extensions/cep-operations-panel/engines/runtime/
+prototypes/**/*.pfx
+prototypes/**/*.pem
+prototypes/**/*.key
+
+# Operating-system files
+# Intelligence: authorized telemetry and private derived results never enter Git.
+data-science/data/real-controlled/
+data-science/artifacts/private/
+/.chrome-pdf-profile/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Local browser profile used only for PDF/manual preview tooling
+/.chrome-pdf-profile/

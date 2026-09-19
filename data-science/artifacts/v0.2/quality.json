@@ -1,0 +1,25 @@
+{
+  "schema_version": "2.0.0",
+  "dataset_version": "0.2.0",
+  "generated_at": "2026-08-27T15:01:00.472Z",
+  "input_count": 6125,
+  "accepted_count": 6125,
+  "rejected_count": 0,
+  "deduplicated_count": 0,
+  "conflict_count": 0,
+  "rejections_by_reason": {},
+  "rejections": [],
+  "duplicates": [],
+  "conflicts": [],
+  "date_range": {
+    "start": "2026-03-01T08:00:09.062Z",
+    "end": "2026-08-27T15:00:59.972Z"
+  },
+  "data_origin_distribution": {
+    "SYNTHETIC": 6125
+  },
+  "account_count": 3,
+  "workspace_count": 5,
+  "device_count": 10,
+  "tool_count": 2
+}
